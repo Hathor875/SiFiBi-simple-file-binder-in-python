@@ -4,7 +4,6 @@
 
 ## 🌟 Features
 
-- **Automatic Organization**: SiFiBi monitors your directory and sorts files based on their extensions.
 - **Custom Configuration**: Define your file types and target directories using a JSON configuration file.
 - **Size Threshold**: Specify a maximum file size for processing to ensure larger files are left untouched.
 
