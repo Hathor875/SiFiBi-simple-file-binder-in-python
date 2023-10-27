@@ -11,10 +11,10 @@
 ## 🔧 Setup & Usage
 
 1. **Clone the Repository**:
-git clone https://github.com/Hathor875/SiFiBi-simple-file-binder-in-python/
+git clone https://github.com/Hathor875/SiFiBi-simple-file-binder-in-python.git
 
 2. **Navigate to the Directory**:
-cd sifibi
+cd SiFiBi-simple-file-binder-in-python
 
 3. **Configuration**:
   Edit the `config.json` file to define the file extensions and corresponding directories. Set your desired size threshold to exclude larger files.
