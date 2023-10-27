@@ -1,0 +1,45 @@
+{
+ "settings": {
+        "size_threshold": 100 
+    },
+
+"file_types": {
+    ".jpg": "photo_files",
+    ".jpeg": "photo_files",
+    ".png": "photo_files",
+    ".bmp": "photo_files",
+    ".gif": "photo_files",
+    ".tiff": "photo_files",
+    ".webp": "photo_files",
+    
+    ".mp3": "audio_files",
+    ".wav": "audio_files",
+    ".ogg": "audio_files",
+    ".flac": "audio_files",
+    ".aac": "audio_files",
+    ".m4a": "audio_files",
+    
+    ".mp4": "video_files",
+    ".mkv": "video_files",
+    ".flv": "video_files",
+    ".avi": "video_files",
+    ".mov": "video_files",
+    ".wmv": "video_files",
+
+    ".xls": "spreadsheet_files",
+    ".xlsx": "spreadsheet_files",
+    ".ods": "spreadsheet_files",
+    ".csv": "spreadsheet_files",
+
+    ".doc": "document_files",
+    ".docx": "document_files",
+    ".pdf": "document_files",
+    ".odt": "document_files",
+    ".txt": "text_files",
+
+    ".zip": "archive_files",
+    ".rar": "archive_files",
+    ".tar.gz": "archive_files",
+    ".7z": "archive_files"
+}
+}
