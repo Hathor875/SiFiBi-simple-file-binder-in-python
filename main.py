@@ -1,5 +1,23 @@
 import json
+import time
 from pathlib import Path
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+
+
+def auto_run():
+    current_folder = Path('.')
+    for item in current_folder.iterdir():
+        if item.is_file():
+            handle_file(item.suffix, item)
+
+
+class MyHandler(FileSystemEventHandler):
+    @staticmethod
+    def on_created(event):
+        if event.is_directory:
+            return
+        auto_run()
 
 
 def load_config(filename: str) -> dict:
@@ -28,7 +46,18 @@ def handle_file(extension: str, source: Path):
 
 if __name__ == '__main__':
     config = load_config('config.json')
-    currentFolder = Path('.')
-    for item in currentFolder.iterdir():
-        if item.is_file():
-            handle_file(item.suffix, item)
+    auto_run()
+    path = "."
+    sleepTime = config["settings"]["size_threshold"]
+    print(sleepTime)
+    event_handler = MyHandler()
+    observer = Observer()
+    observer.schedule(event_handler, path, recursive=False)
+    observer.start()
+    try:
+        while True:
+            time.sleep(sleepTime)
+            pass
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
