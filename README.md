@@ -30,7 +30,9 @@
     ```bash
     cd SiFiBi-simple-file-binder-in-python
     ```
+    ### Directory Handling
 
+    SiFiBi organizes files in the parent directory of its location. To segregate files in a specific directory, place the SiFiBi directory inside the target directory you wish to organize. The program will        then work on files one level up from its own location.
 4. **Configuration**:
     Edit the `config.json` file to define the file extensions and corresponding directories. Set your desired size threshold to exclude larger files.
 
