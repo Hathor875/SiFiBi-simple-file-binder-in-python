@@ -8,13 +8,13 @@ from watchdog.events import FileSystemEventHandler
 def auto_run():
     current_folder = Path('..')
     for item in current_folder.iterdir():
-        if item.is_file():
+        if item.is_file() and item.name not in ['config.json', 'main.py']:
             handle_file(item.suffix, item)
 
 
 class MyHandler(FileSystemEventHandler):
     @staticmethod
-    def on_created(event):
+    def on_created(event, **kwargs):
         if event.is_directory:
             return
         auto_run()
@@ -46,9 +46,9 @@ def handle_file(extension: str, source: Path):
 
 if __name__ == '__main__':
     config = load_config('config.json')
-    auto_run()
     path = ".."
-    sleepTime = config["settings"]["size_threshold"]
+    auto_run()
+    sleepTime = configSleepTime = config["settings"]["sleep_monitoring_time"]
     event_handler = MyHandler()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=False)
