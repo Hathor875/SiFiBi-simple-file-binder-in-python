@@ -4,7 +4,7 @@
 
 ## 🌟 Features
 
--**Automatic Monitoring**: Continuously watches for changes in the directory and organizes newly added files on-the-fly.
+- **Automatic Monitoring**: Continuously watches for changes in the directory and organizes newly added files on-the-fly.
 - **Custom Configuration**: Define your file types and target directories using a JSON configuration file.
 - **Size Threshold**: Specify a maximum file size for processing to ensure larger files are left untouched.
 
