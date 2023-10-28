@@ -6,7 +6,7 @@ from watchdog.events import FileSystemEventHandler
 
 
 def auto_run():
-    current_folder = Path('.')
+    current_folder = Path('..')
     for item in current_folder.iterdir():
         if item.is_file():
             handle_file(item.suffix, item)
@@ -47,9 +47,8 @@ def handle_file(extension: str, source: Path):
 if __name__ == '__main__':
     config = load_config('config.json')
     auto_run()
-    path = "."
+    path = ".."
     sleepTime = config["settings"]["size_threshold"]
-    print(sleepTime)
     event_handler = MyHandler()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=False)

@@ -1,6 +1,6 @@
 {
     "settings": {
-        "size_threshold": 100,
+        "size_threshold": 2,
         "sleep_monitoring_time": 100
     },
     "file_types": {
