@@ -6,7 +6,7 @@ from watchdog.events import FileSystemEventHandler
 
 
 def auto_run():
-    current_folder = Path(config["settings"]["monitoring_Directory"])
+    current_folder = Path(config["settings"]["monitoring_directory"])
 
     for item in current_folder.iterdir():
         if item.is_file() and item.name not in ['config.json', 'main.py']:
@@ -47,7 +47,7 @@ def handle_file(extension: str, source: Path):
 
 if __name__ == '__main__':
     config = load_config('config.json')
-    path = config["settings"]["monitoring_Directory"]
+    path = config["settings"]["monitoring_directory"]
     auto_run()
     sleepTime = configSleepTime = config["settings"]["sleep_monitoring_time"]
     event_handler = MyHandler()
