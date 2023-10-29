@@ -69,13 +69,17 @@ To ensure that SiFiBi runs automatically upon system startup, you can utilize th
 
 
 - **settings.size_threshold**: Define the maximum file size (in MB) that SiFiBi will process. Files larger than this threshold will be ignored.
-    
+- **settings.sleep_monitoring_time**: Define sleep time betwen autoscan in second 1 = 1s,0.5 = 0,5s etc.
+- **settings.monitoring_directory**: Define path to scan directory.
 - **file_types**: Map file extensions to desired destination folders. For example, `.jpg` files will be moved to a `photo_files` directory.
+ 
 
 ```json
 {
     "settings": {
-        "size_threshold": 100
+        "size_threshold": 2,
+        "sleep_monitoring_time": 2,
+        "monitoring_directory": ".."
     },
     "file_types": {
         ".jpg": "photo_files",
