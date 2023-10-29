@@ -1,7 +1,8 @@
 {
     "settings": {
         "size_threshold": 2,
-        "sleep_monitoring_time": 2
+        "sleep_monitoring_time": 2,
+        "monitoring_Directory": ".."
     },
     "file_types": {
         ".jpg": "photo_files",
