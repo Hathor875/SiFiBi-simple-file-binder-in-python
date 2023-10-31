@@ -22,8 +22,11 @@ class MyHandler(FileSystemEventHandler):
 
 
 def load_config(filename: str) -> dict:
-    with open(filename, 'r') as file:
-        return json.load(file)
+    try:
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading config: {e}")
 
 
 def move_file(source: Path, destination: Path):
@@ -49,14 +52,14 @@ if __name__ == '__main__':
     config = load_config('config.json')
     path = config["settings"]["monitoring_directory"]
     auto_run()
-    sleepTime = configSleepTime = config["settings"]["sleep_monitoring_time"]
+    sleep_time = configSleepTime = config["settings"]["sleep_monitoring_time"]
     event_handler = MyHandler()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=False)
     observer.start()
     try:
         while True:
-            time.sleep(sleepTime)
+            time.sleep(sleep_time)
             pass
     except KeyboardInterrupt:
         observer.stop()
