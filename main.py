@@ -62,5 +62,6 @@ if __name__ == '__main__':
             time.sleep(sleep_time)
             pass
     except KeyboardInterrupt:
+        print("Monitoring stopped by user.")
         observer.stop()
     observer.join()
